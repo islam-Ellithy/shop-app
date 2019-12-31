@@ -15,5 +15,10 @@ class Product with ChangeNotifier {
       @required this.title,
       @required this.imageUrl,
       @required this.price,
-      this.isFavorite});
+      this.isFavorite = false});
+
+  void toggleFavoriteStatus() {
+    isFavorite = !isFavorite;
+    notifyListeners();
+  }
 }
